@@ -50,4 +50,13 @@ public class Bibliotecario {
         String atividade = "Registro de perda do livro " + livro.getTitulo();
         this.atividades.add(atividade);
     }
+
+    public Object podeRealizarEmprestimo(Livro livro) {
+        return livro.podeSerEmprestado();
+    }
+
+    public void registrarDevolucao(Livro livro) {
+        String atividade = "Devolução do livro " + livro.getTitulo();
+        this.atividades.add(atividade);
+    }
 }

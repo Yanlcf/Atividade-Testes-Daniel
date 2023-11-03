@@ -87,7 +87,7 @@ public void testRegistrEmprestiLivro() {
     // Cria um mock de Bibliotecario
     Bibliotecario bibliotecarioMock = Mockito.mock(Bibliotecario.class);
     // Cria um livro
-    Livro livro = new Livro("O Ladrao de Raios", "Rick", "978-0451524935");
+    Livro livro = new Livro("O Ladrao de Raios", "Rick", "786542");
     // Registra o empréstimo do livro, passando o objeto e o nome do leitor.
     bibliotecarioMock.realizarEmprestimo(livro, "João");
     

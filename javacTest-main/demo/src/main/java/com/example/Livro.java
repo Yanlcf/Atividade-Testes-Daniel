@@ -59,4 +59,9 @@ public class Livro {
     public void setBibliotecarioResponsavel(Bibliotecario bibliotecarioResponsavel) {
         this.bibliotecarioResponsavel = bibliotecarioResponsavel;
     }
+
+    public void setDisponivel(boolean b) {
+       boolean disponivel = b;
+    }
+    
 }

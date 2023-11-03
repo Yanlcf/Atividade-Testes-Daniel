@@ -59,4 +59,16 @@ public class Bibliotecario {
         String atividade = "Devolução do livro " + livro.getTitulo();
         this.atividades.add(atividade);
     }
+
+    public boolean emprestarLivro(Membros membro, Livro livro) {
+        if (livro.podeSerEmprestado()) {
+            // Verifica se o livro está disponível para empréstimo
+            livro.setDisponivel(false); // Marca o livro como indisponível
+            membro.adicionarLivroEmprestado(livro); // Adiciona o livro à lista de empréstimos do membro
+            return true; // O empréstimo foi bem-sucedido
+        } else {
+            return false; // O livro não está disponível para empréstimo
+        }
+    }
+    
 }

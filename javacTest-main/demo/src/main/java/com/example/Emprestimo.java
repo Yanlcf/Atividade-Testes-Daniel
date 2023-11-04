@@ -35,5 +35,12 @@ public class Emprestimo {
         return dataDevolucao;
     }
 
+    public void pegarLivro() {
+        this.livro.emprestar();
+        this.livro.setMembro(this.membro);
+        this.livro.setEmprestimo(this);
+        this.livro.setBibliotecarioResponsavel(this.bibliotecario);
+    }
+
 
 }

@@ -2,7 +2,6 @@ package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BooleanSupplier;
 
 public class Livro {
     private String titulo;
@@ -12,6 +11,7 @@ public class Livro {
     private Bibliotecario bibliotecarioResponsavel;
     private List<Livro> livrosEmprestados;
     private List<String> atividades;
+    private Membros membro;
 
     public Livro(String titulo, String autor, String isbn) {
         this.titulo = titulo;
@@ -66,7 +66,7 @@ public class Livro {
     }
 
     public void setDisponivel(boolean b) {
-       boolean disponivel = b;
+        boolean disponivel = b;
     }
 
     public void registrarDevolucao() {
@@ -80,14 +80,19 @@ public class Livro {
 
     public void renovarEmprestimo() {
         if (!livrosEmprestados.isEmpty()) {
-            
             for (Livro livro : livrosEmprestados) {
                 this.atividades.add("Renovação do empréstimo do livro " + livro.getTitulo());
             }
         } else {
-            
+
         }
     }
-    
-    
+
+    public void setMembro(Membros membro) {
+        this.membro = membro;
+    }
+
+    public void setEmprestimo(Emprestimo emprestimo) {
+        this.emprestado = emprestado;
+    }
 }

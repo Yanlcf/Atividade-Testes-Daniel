@@ -1,61 +1,55 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Membros {
     private int memberId;
     private String firstName;
     private String lastName;
     private int age;
+    private List<Livro> livrosEmprestados;
+    private List<String> atividades;
 
     public Membros(int memberId, String firstName, String lastName, int age) {
         this.memberId = memberId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.livrosEmprestados = new ArrayList<>();
+        this.atividades = new ArrayList<>();
+    }
+
+    // Restante do código
+
+    public void adicionarLivroEmprestado(Livro livro) {
+        this.livrosEmprestados.add(livro);
+    }
+
+    public void registrarDevolucao(Livro livro) {
+        this.livrosEmprestados.remove(livro);
+        livro.devolver();
     }
 
     public int getMemberId() {
-        return memberId;
+        return this.memberId;
     }
 
-    public void setMemberId(int memberId) {
-        this.memberId = memberId;
+    public void registrarEmprestimo(Livro livroMock) {
+        adicionarLivroEmprestado(livroMock);
+        livroMock.emprestar();
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void registrarRenovacao(Livro livro) {
+        this.atualizarAtividades("Renovação do empréstimo do livro " + livro.getTitulo());
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void atualizarAtividades(String atividade) {
+        this.atividades.add(atividade);
     }
 
-    public String getLastName() {
-        return lastName;
+    public boolean possuiLivrosEmprestados() {
+        return livrosEmprestados != null && !livrosEmprestados.isEmpty();
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Membros{" +
-                "memberId=" + memberId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    public void adicionarLivroEmprestado(Livro livro) {
-    }
+    
 }
-

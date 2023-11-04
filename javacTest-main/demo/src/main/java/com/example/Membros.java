@@ -51,5 +51,9 @@ public class Membros {
     public boolean possuiLivrosEmprestados() {
         return livrosEmprestados != null && !livrosEmprestados.isEmpty();
     }
+
+    public Object getNome() {
+        return null;
+    }
     
 }
